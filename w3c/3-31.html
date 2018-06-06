@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var count=0;
+			for (var i=0;i<5;i++){
+				count=count+i;
+			}
+			console.log("count is"+count);
+			/*var tops=5;
+			while (tops>0){
+				for (var spins=0;spins<3;spins++){
+					console.log("tops is spinning!");
+			
+				}
+			  tops=tops-1;
+			}
+			for(var berries =5;berries>0;berries--){
+				console.log("Eating a berry");
+			}
+			var i=1;
+			j=i++;
+			console.log(i);
+			console.log(j);*/
+			
+			var scoops=10;
+			while (scoops >= 0){ 
+				if (scoops==3){
+					alert("Ice cream is running low!");
+				}else if(scoops>9){
+					alert("Eat faster, the icecream is going to melt!");
+				}
+				else if (scoops==2){
+					alert("going once!");
+				}
+				else if (scoops==1){
+					alert("going twice!");
+			  }
+				else if (scoops==0){
+					alert("Gone!");}
+				else{
+					alert("Still lots of ice cream left,come and get it.");
+				scoops=scoops-1;
+			}
+			alert("lift without ice cream isnot the same.");	
+		
+		
+		</script>
+	</body>
+</html>

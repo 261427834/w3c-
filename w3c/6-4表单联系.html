@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <title>表单练习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- <style>
+			p{
+				line-height: 25px;
+      }
+      input:focus, textarea:focus {
+  /* 给激活的元素一点高亮效果 */
+  border-color: #000;
+}
+textarea {
+  /* 使多行文本输入框和它们的label正确对齐 */
+  vertical-align: top;
+  /* 给文本留下足够的空间 */
+  height: 5em;
+}
+input, textarea {
+  /* 确保所有文本输入框字体相同
+     textarea默认是等宽字体 */
+  font: 1em sans-serif;
+
+  /* 使所有文本输入框大小相同 */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* 调整文本输入框的边框样式 */
+  border: 1px solid #999;
+}
+label {
+  /* 确保所有label大小相同并正确对齐 */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+.button {
+  /* 把按钮放到和文本输入框一样的位置 */
+  padding-left: 90px; /* 和label的大小一样 */
+}
+button {
+  /* 这个外边距的大小与label和文本输入框之间的间距差不多 */
+  margin-left: .5em;
+}
+form {
+  /* 居中表单 */
+  margin: 0 auto;
+  width: 400px;
+  /* 显示表单的轮廓 */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+		</style> -->
+	</head>
+	<body>
+<div class="container">
+        <div class="row">
+  <div class="col-sm-4">   
+		<label for="name">
+  Name: <input type="text" id="name" name="user_name">
+</label>
+</div>  
+<div class="col-sm-4"></div>
+<p>正确设置标签的另一个好处是可以在所有浏览器中单击标签来激活相应的小部件。这对于像文本输入这样的例子很有用，在这里你可以点击标签和输入来聚焦它，它同样对于单选按钮和复选框特别有用——这种控件的可点击区域可能非常小，设置标签来使它们可点击区域变大是非常有用的。</p>
+<p>
+	label标签中的for对应input中的id ，只要这两个值相同，那么你点击标签的时候等同于点击单选或者复选框。
+举个例子：
+</p>
+<p>在多个标签的情况下，您应该将一个小部件和它的标签嵌套在一个<code>&lt;label&gt;</code>元素中。</p>
+</div>  
+<div class="row">
+<form>
+  <p>
+    <label for="taste_1">I like cherry</label>
+    <input type="checkbox" id="taste_1" name="taste_cherry" value="1">
+  </p>
+  <p>
+    <label for="taste_2">I like banana</label>
+    <input type="checkbox" id="taste_2" name="taste_banana" value="2">
+  </p>
+</form>
+</div>
+
+<hr />
+<form action="" method="post">
+  <div>
+  <label for="name">
+    NAME:
+  </label>
+  <input type="text"id="name" value="请输入姓名" name="user_name">
+</div>
+<div>
+    <label for="email">
+      EMAIL:
+    </label>
+    <input type="email" id="email" value="请输入电子邮箱地址" name="user_email" >
+  </div>
+  <div>
+      <label for="msg">
+       Message:
+      </label>
+      
+     <textarea name="msg" id="msg" name="user_msg">请输入信息</textarea>
+    </div>
+    <div class="button">
+      <button type="submit">提交</button>
+      <!-- <button type="reset">重置</button> -->
+    </div>
+</form>
+<form action="">
+  <fieldset>
+    <legend>Fruit juice size</legend>
+  <p>
+    <input type="radio" name="size" id="size1" value="small">
+    <label for="size1">Small</label>
+  </p>
+  <p>
+    <input type="radio" name="size" id="size2" value="medium">
+    <label for="size2">Medium</label>
+  </p>
+  <p>
+      <input type="radio" name="size" id="size3" value="big">
+      <label for="size3">Big</label>
+    </p>
+  </fieldset>
+</form>
+</div>
+	</body>
+</html>
