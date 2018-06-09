@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6-7在敲一遍6-6</title>
+    <link rel="stylesheet" href="css/payment-form.css">
+   <style type="text/css">
+   
+   </style>
+</head>
+<body>
+    <form action="">
+        <h1>
+            Payment form
+        </h1>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>
+                Contact information
+            </h2>
+         <fieldset>
+            <legend>Title</legend>
+            <ul>
+                <li>
+                    <label for="title_1">
+                        <input type="radio" name="title" id="title_1"value="M.">Mister
+                    </label>
+                </li>
+                <li>
+                    <label for="title_2">
+                        <input type="radio" name="title" id="title_2"value="Ms.">Miss 
+                </li>
+            </ul>
+        </fieldset>
+        <p>
+            <label for="name">
+                <span>Name：</span>
+                <strong>
+                    <abbr title="required">*</abbr>
+                </strong>
+            </label>
+            <input type="text" name="username" id="name">
+        </p>
+        <p>
+            <label for="mail">
+                <span>E-mail:</span>
+               <strong>
+                   <abbr title="required">*</abbr>
+               </strong>
+             </label>
+            <input type="email" name="usermail" id="mail">
+        </p>
+        <p>
+            <label for="pwd">
+                <span>Password</span>
+               <strong>
+                   <abbr title="required">*</abbr>
+               </strong>
+             </label>
+            <input type="password" name="password" id="pwd">
+        </p>
+    </section>
+    <!-- 支付页面开始 -->
+    <section>
+        <h2>
+            Payment information
+        </h2>
+        <p>
+            <label for="card">
+                <span>Card type:</span>
+            </label>
+            <select name="usercard" id="card">
+                <option value="visa">visa</option>
+                <option value="mc">Mastercard</option>
+                <option value="amex">American Express</option>
+            </select>
+        </p>
+        <p>
+            <label for="number">
+            <span>Card number:</span>
+            <strong>
+                <abbr title="required">*</abbr>
+            </strong>
+            </label>
+             <input type="text" name="cardnumber" id="number">
+        </p>
+        <p>
+            <label for="date">
+                <span>
+                    Expiration date:
+                </span>
+                <strong><abbr title="required">*</abbr></strong>
+                <em>formatted as mm/yy</em>
+            </label>
+            <input type="text" name="expiration" id="date">
+        </p>
+        <p>
+            <button type="submit">Validate the payment</button>
+        </p>
+    </section>
+    </form>
+   <div class="biji">
+       <ul>
+           <li>name 元素的名称，这是用于表单数据提交</li>
+           <li>value 用于预定义元素的初始值</li>
+           <li></li>
+           <li></li>
+       </ul>
+   </div>
+   
+</body>
+</html>

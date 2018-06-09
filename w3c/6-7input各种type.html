@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单中input的各种type</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class=".form-control">
+            <form action="" method="post" class="2">
+                <label for="checkbox">复选框：周一
+                    <input type="checkbox" name="1" id="checkbox">
+                </label>
+                <label for="checkbox">周二
+                    <input type="checkbox" name="2" id="checkbox">
+                </label>
+                <label for="checkbox">周三
+                    <input type="checkbox" name="3" id="checkbox">
+                </label>
+                <label for="checkbox">周四
+                    <input type="checkbox" name="4" id="checkbox">
+                </label>
+                <label for="5">单选框：男
+                    <input type="radio" name="sex" id="5">
+                </label>
+                <label for="6">女
+                    <input type="radio" name="sex" id="6">
+                </label>
+                <label for="7">电话号码
+                    <input type="tel" name="tel" id="7">
+                </label>
+                <label for="8">请选择颜色
+                    <input type="color" name="color" id="8">
+                </label>
+                <label for="9">请填写电子邮箱
+                    <input type="email" id="9">
+                </label>
+                <label for="10">请填写日期
+                    <input type="date" id="10">
+                </label>
+                <label for="11">请选择日期
+                    <input type="datetime-local" id="11">
+                </label>
+                <label for="12">请填写日期与日期
+                    <input type="datetime" id="12">
+                </label>
+                <label for="13">请填写密码
+                    <input type="password" id="13">
+                </label>
+                <label for="14">请选择要上传的文件
+                    <input type="file" id="14">
+                </label>
+                <label for="search">搜索</label>
+                <input type="search" id="search" name="search">
+                <label for="url">填写网址</label>
+                <input type="url" id="url" name="url">
+                <textarea cols="30" rows="10">多行文本域填写地址</textarea>
+                <label for="select">多选：
+                    <select name="" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+                <datalist id="mySuggestion">
+                    <option>Apple</option>
+                    <option>Banana</option>
+                    <option>Blackberry</option>
+                    <option>Blueberry</option>
+                    <option>Lemon</option>
+                    <option>Lychee</option>
+                    <option>Peach</option>
+                    <option>Pear</option>
+                </datalist>
+
+                <button type="submit">
+                        <br><strong>提交按钮</strong>
+                    </button>
+                    
+                    <input type="submit" value="提交按钮">
+             </form>
+        </div>
+    </div>
+</body>
+
+</html>
