@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>猜数字游戏</title>
+
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+
+    .lastResult {
+      color: white;
+      padding: 3px;
+    }
+    .guesses{
+        border: 2px;
+        background-color: #ccc;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>猜数字游戏</h1>
+  <p>
+      这里随机产生1-100之内的任意一个整数，
+      每次输入的数值都会提示你距离正确的数太大或者太小，你有十次机会来调整。
+  </p>
+  <div class="form">
+    <label for="guessField">请输入你的猜测：</label>
+    <input type="text" id="guessField" class="guessField">
+    <input type="submit" value="提交猜测" class="guessSubmit">
+  </div>
+
+  <div class="resultParas">
+    <p class="guesses"></p>
+    <p class="lastResult"></p>
+    <p class="lowOrHi"></p>
+  </div>
+
+  <script>
+    // Your JavaScript goes here
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    var guesses = document.querySelector('.guesses');
+    var lastResult = document.querySelector('.lastResult');
+    var lowOrHi = document.querySelector('.lowOrHi');
+    var guessSubmit = document.querySelector('.guessSubmit');
+    var guessField = document.querySelector('.guessField');
+    var guessCount = 1;
+    var resetButton;
+    guessField.focus();//使用focus() 方法立即自动地放置文本光标在输入框内 
+    function checkGuess() {
+  var userGuess = Number(guessField.value);//使用Number对象将guessField.value转换为数字赋值给ueserGuess
+  if (guessCount === 1) {
+    guesses.textContent = '历次猜测： ';
+  }
+  guesses.textContent += userGuess + ' ';
+ 
+  if (userGuess === randomNumber) {
+    lastResult.textContent = '恭喜你，猜对了！';
+    lastResult.style.backgroundColor = 'green';
+    lowOrHi.textContent = '';
+    setGameOver();
+  } else if (guessCount === 10) {
+    lastResult.textContent = '游戏结束';
+    setGameOver();
+  } else {
+    lastResult.textContent = '错误!';
+    lastResult.style.backgroundColor = 'red';
+    if(userGuess < randomNumber) {
+      lowOrHi.textContent = '最后一次猜测数值太小';
+    } else if(userGuess > randomNumber) {
+      lowOrHi.textContent = '最后一次猜测数值太大';
+    }
+  }
+ 
+  guessCount++;
+  guessField.value = '';
+  guessField.focus();
+}
+    guessSubmit.addEventListener('click', checkGuess);
+    // 定义setGameOver函数
+    function setGameOver() {
+      guessField.disabled = true;//禁用表单元素
+      guessSubmit.disabled = true;//禁用按钮
+      resetButton = document.createElement('button'); //创建了一个新的button元素
+      resetButton.textContent = '重新开始新游戏';   //设置它的文本为“Start new game”，
+      document.body.appendChild(resetButton);  //并把它添加到我们文档的底部。
+      resetButton.addEventListener('click', resetGame); //新按钮上设置一个事件监听器，点击时触发resetGame函数
+    }
+    //定义resetGame函数
+    function resetGame() {
+      guessCount = 1;//将猜测次数设为1
+
+      var resetParas = document.querySelectorAll('.resultParas p'); //创建reseParas变量，.querySelectorAll 选中所有p标签
+      for (var i = 0; i < resetParas.length; i++) {      //
+        resetParas[i].textContent = '';      //清除选中所有p标签的信息
+      }
+
+      resetButton.parentNode.removeChild(resetButton);//删除重置按钮
+
+      guessField.disabled = false;  //启用表单元素
+      guessSubmit.disabled = false;//启用表单元素
+      guessField.value = '';//清空文本字段
+      guessField.focus();//聚焦文本字段
+
+      lastResult.style.backgroundColor = 'white';//将lastResult背景重置为白色
+
+      randomNumber = Math.floor(Math.random() * 100) + 1;//生成一个新的随机数
+    }
+
+  </script>
+</body>
+
+</html>
