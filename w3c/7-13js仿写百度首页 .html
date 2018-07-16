@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      ul{
+        padding: 0;
+          margin: 0;
+         }
+     li{
+        list-style-type: none;
+      }
+      #box{
+          width: 200px;
+          margin: 0 auto;
+          border: 1px solid black;
+          box-shadow: 1px 1px 1px black;
+          text-align: center;
+          font-size: 30px;
+          line-height: 60px;
+          font-family: "simhei";
+      }
+      #span{
+          display: block;
+          width: 200px;
+          height: 60px;
+          border: 1px solid black;
+          box-shadow: 1px 1px 1px black;
+          
+                
+
+      }
+      
+      #ul1 li:hover{
+          background-color: blue;
+          color:azure;
+      }
+      #ul1{
+          display: none;
+
+      }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span id="span">
+            设置
+        </span>
+        <ul id="ul1" >
+            <li>搜索设置</li>
+            <li>高级搜索</li>
+            <li>关闭预测</li>
+            <li>搜索历史</li>
+        </ul>
+    </div>
+
+
+    <script>
+    var abox=document.getElementById("box");
+    aul1=document.getElementById("ul1");
+    
+    abox.onmouseover=function(){
+        aul1.style.display="block"
+    };
+    abox.onmouseout=function(){
+        aul1.style.display="none"
+    };
+
+
+    </script>
+</body>
+</html>
