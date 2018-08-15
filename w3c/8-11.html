@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    div{
+        padding: 20px;
+        width: 600px;
+        margin: 0 auto;
+    }
+    </style>
+    <title>js属性操作
+    </title>
+</head>
+<body>
+    <div>
+    <input type="text" id="btn1" value="">
+    <input type="button" id="btn2"value="走你" >
+</div>
+<div>
+        
+    <img src="img/1.jpg" alt="" id="btn3" width="350px" height="500px"><br>
+    <input type="button" id="btn4"value="显示图片" >
+</div>
+<script>
+    var obtn1=document.getElementById("btn1");
+    var obtn2=document.getElementById("btn2");
+    var obtn3=document.getElementById("btn3");
+    var obtn4=document.getElementById("btn4");
+    var i=1;
+    // .setAttribute 通过操作属性值来改变图片地址，就改变了图片。
+    // .setAttribute setAttribute() 方法创建或改变某个新属性。如果指定属性已经存在,则只设置该值。
+
+
+    // obtn2.onclick=function(){
+    //    alert(obtn1.value)
+    // };
+
+obtn4.onclick=function (){
+   obtn1.value=i;
+    obtn3.src="img/"+i+".jpg";
+i++;
+if (i>7) {
+
+    i=1;
+};
+}
+
+ 
+
+
+
+</script>
+</body>
+</html>
