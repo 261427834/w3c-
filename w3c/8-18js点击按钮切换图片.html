@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2018-8-18js练习切换图片</title>
+    <style>
+    #warp{
+        /* width: 400px;
+        height: 600px; */
+        position: relative;
+        text-align: center;
+
+    }
+    #warp a{
+
+        width: 30px;
+        height: 200px;
+        background-color:#56e1e6;
+        border: 3px solid rgba(83, 197, 231, 0.671);
+        border-radius: 2%;
+        font-size: 40px;
+        font-weight: bolder;
+        text-decoration: none;
+        text-align: center;
+        line-height:200px;
+        position:absolute;
+
+    }
+    #left{
+        left: 80px;
+        top: 150px;
+    }
+    #right{
+ right: 250px; top: 150px;
+    }
+
+ #box{ 
+     width: 400px; 
+     height: 500px;
+     margin: 5px auto;
+     text-align: center;
+
+
+    }
+    #box img{
+ width: 350px;
+  height: 500px;
+ border-radius: 2%;
+
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <h1>点击左右按钮，切换图片</h1>
+        <a href="#" id="left"><</a>
+        <div id="box">
+           
+            <img src="img/1.jpg" alt="" id="img1">
+            
+        </div>
+        <a href="#" id="right">></a>
+    </div>
+ <script>
+ var btnr=document.getElementById("right");
+ var btnl=document.getElementById("left");
+ var e=document.getElementById("img1");
+ var imgList=["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", 
+              "img/5.jpg", "img/6.jpg", "img/7.jpg" ];
+var a=0,b=0;
+btnr.onclick=function up(){
+    a++;
+    if(a==imgList.length){a=0};
+    console.log(a);
+    e.src=imgList[a];
+   
+ };
+ btnl.onclick=function down(){ 
+    
+  if(b==0)
+     {b= imgList.length}; 
+     e.src=imgList[b-1];
+    console.log(b - 1);
+
+   b--;
+
+};
+ </script>   
+</body>
+</html>
