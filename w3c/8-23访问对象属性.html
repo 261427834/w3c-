@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>访问对象属性</title>
+</head>
+
+<body>
+    <script>
+//  var myDataName = nameInput.value;
+//   var myDataValue = nameValue.value;
+        var person = {
+            name: ['Bob', 'Smith'],
+            age: 32,
+            gender: 'male',
+            interests: ['music', 'skiing'],
+            bio: function () {
+                alert(this.name[0] +
+                    ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] +
+                    ' and ' + this.interests[1] + '.');
+            },
+            greeting: function () {
+                alert('Hi! I\'m ' + this.name[0] + '.');
+            }
+            
+        };
+        var myDataName = 'height' ;
+        var myDataValue = '1.75m';
+        person[myDataName] = myDataValue;
+        var man ={
+            name:["宋岩"],
+            age:32 ,
+            sex: "男" ,
+            xingqu:["看书","写字"] ,
+            bo: function () {
+                alert(
+                    this['name'] +" "+"年龄是"+this['age']+".他 喜欢"+this.xingqu[0]+"还有"+this.xingqu[1]
+                );
+            }
+        };
+    </script>
+</body>
+
+</html>

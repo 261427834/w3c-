@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>9-12</title>
+		<style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        background: #eee;
+      }
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+      }
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+	<script type="text/javascript">
+		var html= document.querySelector("html");//将html选择并var为变量
+		var panel=document.createElement("div");//生成div元素并定义为panel
+		panel.setAttribute("class","msgBox");//设置panel的属性为class=msgBox
+		html.appendChild(panel);//将panel注册为html的子元素
+		var msg=document.createElement("p");//生成p元素并定义为msg
+		msg.textContent="This is a message box";//msg内容填充
+		panel.appendChild(msg);//将p元素注册为panel子元素
+		var closeBtn=document.createElement("button");//生成button元素并定义为closeBtn
+		closeBtn.textContent="x";//将x填充为closeBtn内容
+		panel.appendChild(closeBtn);
+		closeBtn.onclick= function(){
+			panel.parentNode.removeChild(panel);//找到panel的上级dom 来消除panel(自己不能消除自己)
+			
+		}
+	</script>	
+	</body>
+</html>

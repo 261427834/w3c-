@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环查找联系人</title>
+</head>
+<body>
+<label for="search">Search by contact name: </label>
+<input id="search" type="text">
+<button>Search</button>
+
+<p></p>
+<script>
+var contacts = ['Chris:11', 'Sarah:22', 'Bill:33', 'Mary:44', 'Dianne:55'];
+var para = document.querySelector('p');
+var input = document.querySelector('input');
+var btn = document.querySelector('button');
+
+btn.addEventListener('click', function() {
+var searchName = input.value;
+input.value = '';
+input.focus();
+for (var i = 0; i < contacts.length; i++) { 
+    var splitContact=contacts[i].split(':'); 
+    console.log(splitContact);
+ if (splitContact[0]===searchName)
+    { para.textContent=splitContact[0] + '\' s number is ' + splitContact[1] + ' .'; break; } else { para.textContent='Contact not found.'
+    ; } } });
+    </script>
+</body>
+</html>

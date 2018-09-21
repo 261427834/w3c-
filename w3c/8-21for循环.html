@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for 循环</title>
+    <style>
+    #box{
+        
+        /* overflow: hidden; */
+
+    }
+    #box img{
+width: 150px;
+height: 200px;
+/* display: inline-block; */
+    }
+    #btn{
+        width: 50px;
+        height: 50px;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+<input type="button" value="点击" id="btn">
+<div id="showbox">
+
+</div>
+<!-- <img src="img/1.jpg" alt="" > -->
+    </div>
+    <script>
+//测试代码，与主题无关。
+//         var a=0,b=0;
+//         for(i=0;a<5;a++){
+//             console.log(a);
+
+          
+//         }
+//  b=a;
+//  console.log("b="+b);
+ //测试代码，与主题无关。
+//  if (myObj.hasOwnProperty(checkProp)) {
+//      return myObj[checkProp];
+//              } else {
+//             return "Not Found";
+//         }
+
+//开始
+var oDiv=document.getElementById("showbox");
+var oBtn = document.getElementById("btn");
+var arr=['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 
+'img/5.jpg', 'img/6.jpg', 'img/7.jpg', ];
+oBtn.onclick=function (){
+//for 循环的写法 for （初始值；条件判断；计数器）{执行语句}
+//初始值只会在循环开始的时候执行一次，用于定义循环
+//条件判断会在每一次循环开始的时候判断，如果为真就执行语句，同时计数器执行一次，
+//如果为条件为假，就不执行语句，
+//计数器在每次循环结束以后执行
+
+      for( var i=0;i<arr.length;i++){
+          console.log(arr[i]);//输出为img/1.jpg.......
+//问题出在 img标签无法解析 arr[i]
+// oDiv.innerHTML +="  <img src='   img/2.jpg   ' />";
+        
+oDiv.innerHTML += "<img src='    "+arr[i]+"   ' />";
+//应该使用字符串拼接来写,注意单双引号的使用。
+oDiv.innerHTML += "<img src=\"  " +arr[i]+" \"  />" ;
+//或者使用转义符来书写。
+      }
+     
+// console.log(arr[i]);
+
+};
+
+    </script>
+</body>
+</html>

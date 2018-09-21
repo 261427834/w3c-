@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+// var txt = '{ "employees" : [' +
+// '{ "firstName":"Bill" , "lastName":"Gates" },' +
+// '{ "firstName":"George" , "lastName":"Bush" },' +
+// '{ "firstName":"Thomas" , "lastName":"Carter" } ]}';
+//     console.log(txt);
+// var obj = eval ("(" + txt + ")");//
+// console.log(obj);
+var collection = {
+2548: {
+album: "Slippery When Wet",
+artist: "Bon Jovi",
+tracks: [
+"Let It Rock",
+"You Give Love a Bad Name"
+]
+},
+2468: {
+album: "1999",
+artist: "Prince",
+tracks: [
+"1999",
+"Little Red Corvette"
+]
+},
+1245: {
+artist: "Robert Palmer",
+tracks: [ ]
+},
+5439: {
+album: "ABBA Gold"
+}
+};
+
+// 写一个函数，它有个三个参数，id、prop、 value。
+
+// 如果 value !='' 而且prop != 'tracks' ，collectionCopy[id][prop]=value;。
+
+// 如果 value !='' 而且prop == 'tracks' ，collectionCopy[id][prop].push(value);。
+
+// 如果 value == '' ，delete collectionCopy[id][prop];。
+
+// 记住：函数返回的永远是整个对象。
+
+function update(id, prop, value) {
+if(value == ''){
+delete collectionCopy[id][prop];
+}
+else if(prop != 'tracks'){
+collectionCopy[id][prop]=value;
+}
+else{
+collectionCopy[id][prop].push(value);
+}
+
+return collection;
+}
+
+
+    </script>
+</body>
+</html>

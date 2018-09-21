@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js三种弹出框</title>
+</head>
+<body>
+    <button id="btn1">按钮-警示框</button>
+<button id="btn2">回答我</button>
+<button id="btn3">按钮3</button>
+<script>
+var obtn1=document.getElementById("btn1");
+var obtn2=document.getElementById("btn2");
+var obtn3=document.getElementById("btn3");
+obtn1.onclick=function(){
+    alert("alert弹出框只有弹出,无返回值,警示框")
+};
+obtn2.onclick=function(){
+  var con;
+  con=confirm("你喜欢下雨吗?");
+  if(con){
+      alert("是的,下雨天总是很美");
+  }
+else{
+    alert("下雨天总是很糟!");
+};
+obtn3.onclick=function(){
+var name;
+name=prompt("欢迎回家!大人!");
+alert(name+"sama!");
+
+
+}
+
+}
+
+
+</script>
+</body>
+
+</html>

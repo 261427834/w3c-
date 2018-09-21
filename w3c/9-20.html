@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document9-20</title>
+    <style>
+    div {
+        margin-top: 100px;
+        text-align: center;
+    }
+    </style>
+    <script>
+    window.onload=function(){
+        var img=document.getElementById("rocking");
+       img.onclick=function(){
+           var name;
+            name=prompt("what is your name ?");
+alert("Hello"+name+",how do you do!");
+
+     img.src="img/rock2.png";
+        }
+     
+    }
+    </script>
+</head>
+<body >
+    <div>
+        <img src="img/rock.png" alt="iRock" id="rocking">
+    </div>
+</body>
+</html>
