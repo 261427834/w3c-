@@ -13,3 +13,7 @@ for(var i = 0; i < cities.length; i++) {
   list.appendChild(listItem);
 
 }
+var a,b;
+
+a=parseFloat("4444444");
+console.log(a);
