@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.3.2.min.js"></script>
+    <script>
+        $(function () {
+            $('tbody>tr').click(function () {
+                $(this).addClass('selected') //为选中项添加高亮
+                    .siblings().removeClass('selected') //去除其他项的高亮形式
+                    .end();//vue 中通过 :class="" 设置.
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

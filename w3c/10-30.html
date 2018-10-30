@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="greybg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>抢单</title>
+    <link rel="stylesheet" href="https://www.yimiaozhaopin.com/web/Website/Public/css/common.css" />
+    <link rel="stylesheet" href="https://www.yimiaozhaopin.com/web/Website/Public/css/sharepage.css" />
+    <link rel="stylesheet" href="https://www.yimiaozhaopin.com/web/Website/Public/dist/viewer.min.css">
+    <script src="https://www.yimiaozhaopin.com/web/Website/Public/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.3&key=您申请的key值"></script>
+    <script type="text/javascript" src="https://www.yimiaozhaopin.com/web/Website/Public/js/addToolbar.js"></script>
+    <script type="text/javascript" src="https://www.yimiaozhaopin.com/web/Website/Public/dist/viewer.min.js"></script>
+</head>
+<script type="text/javascript">
+    wx.config({
+        debug: false,
+        appId: 'wx8f7797dc55dbb4ee',
+        timestamp: 1540881256,
+        nonceStr: 'kPF9VJVtCJKZQGlZ',
+        signature: 'e4a1606bc80dcefaa5af30d967d2eefb893b17d6',
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+
+    });
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title: '快来！这里有份好工作', // 分享标题
+            link: 'https://www.yimiaozhaopin.com//index.php?g=Website&m=index&a=billnave&blog_id=731&blog_client_id=8&client_id=8&userid=tPVRIvId&from=singlemessage', // 分享链接
+            imgUrl: 'https://www.yimiaozhaopin.com/web/Website/Public/images/logo@3x.png', // 分享图标
+            success: function (res) {
+                alert("分享到朋友圈成功"); // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            fail: function (res) {
+                alert(res);
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: '快来！这里有份好工作', // 分享标题
+            desc: '【其他工作】  6175.00元/人\n诚聘总经理助理🌻管理学本科以上学历🌴年薪10万元以上💰', // 分享描述
+            link: 'https://www.yimiaozhaopin.com//index.php?g=Website&m=index&a=billnave&blog_id=731&blog_client_id=8&client_id=8&userid=tPVRIvId&from=singlemessage', // 分享链接
+            imgUrl: 'https://www.yimiaozhaopin.com/web/Website/Public/images/logo@3x.png', // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function (res) {
+                alert("分享给微信朋友成功"); // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            },
+            fail: function (res) {
+                alert(res);
+            }
+        });
+    });
+</script>
+
+<body>
+    <div id="shareWrap">
+        <!--顶部浮动层 -->
+        <div class="topLayer" id="downloadButton">
+            <h1><img src="https://www.yimiaozhaopin.com/web/Website/Public/images/logo64.png" alt="" /></h1>
+            <div>
+                <p>找兼职、短期、临时工作</p>
+                <p>来一秒招聘看看吧</p>
+            </div><span class="btn">立即下载</span>
+        </div>
+        <!--顶部浮动层 -->
+        <section class="sharepage">
+            <!--传单派发 -->
+            <div class="box leafletsarea">
+                <h4>其他工作<span class="money">￥6175.00/1月</span></h4>
+                <div class="infolist">
+                    <ul>
+                        <li class="time clearfix"><label>开工：</label>
+                            <p><span>08-27 09:00</span><span>1月</span></p>
+                        </li>
+                        <li class="num clearfix"><label>人数：</label>
+                            <p><span>2人</span></p>
+                        </li>
+                        <li class="pos clearfix"><label>地点：</label>
+                            <p><span>中国工商银行(日照高新支行)</span><!-- <em>1.96km</em> -->
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notelabel">
+                    <ul class="clearfix">
+                        <li>薪资预付平台</li><!-- <li>保险</li> -->
+                    </ul>
+                </div>
+            </div>
+            <!--传单派发 -->
+            <!--工作内容 -->
+            <div class="box workarea">
+                <h4>工作内容</h4>
+                <article>诚聘总经理助理🌻管理学本科以上学历🌴年薪10万元以上💰</article>
+                <div class="imgs" id="picList">
+                    <ul id="dowebok">
+                        <li><img src="https://yimiaozhaopin.com/uploadfiles/2018/08/201808201727245866_thumb.jpg"
+                                onclick="showImg()"></li>
+                        <li><img src="https://yimiaozhaopin.com/uploadfiles/2018/08/201808201727255570_thumb.jpg"
+                                onclick="showImg()"></li>
+                        <li><img src="https://yimiaozhaopin.com/uploadfiles/2018/08/201808201727404843_thumb.jpg"
+                                onclick="showImg()"></li>
+                    </ul>
+                </div>
+            </div>
+            <!--\工作内容 -->
+            <!--雇主信息 -->
+            <div class="box hirerarea">
+                <h4>雇主信息</h4>
+                <div class="hirerinfo clearfix">
+                    <p class="photo"><img src="https://yimiaozhaopin.com/uploadfiles/2018/09/201809302147226079_thumb.jpg"><!-- src="https://www.yimiaozhaopin.com/web/Website/Public/images/photocircle.png"  --><span
+                            class="company"></span></p>
+                    <h5>13310639168</h5>
+                    <div class="score clearfix">
+                        <ul class="stars">
+                            <li class="checked"></li>
+                            <li class="checked"></li>
+                            <li class="checked"></li>
+                            <li class="checked"></li>
+                            <li class="checked"></li>
+                        </ul><span class="num">100分</span>
+                    </div>
+                </div>
+            </div>
+            <!--\雇主信息 -->
+            <!--路线 -->
+            <div class="box maparea">
+                <h4>路线</h4>
+                <div class="map">
+                    <div id="container" style="pointer-events: none;"><img src="https://www.yimiaozhaopin.com/web/Website/Public/images/map.png"></div>
+                    <!--替换地图--><span class="pointer"></span>
+                    <!--位置图标-->
+                    <!-- <span class="btnclick">点击查看路线</span> -->
+                </div>
+            </div>
+            <!--\路线 -->
+            <!--联系 -->
+            <div class="box contactarea">
+                <div class="call"></div>
+                <div class="twocode clearfix">
+                    <p class="code"><img src="https://www.yimiaozhaopin.com/web/Website/Public/images/code.png"></p>
+                    <p class="codenote"></p>
+                </div>
+            </div>
+            <!--\联系 -->
+        </section>
+        <footer>
+            <p id="downloadButton2">下载抢单<span>（0人已抢）</span></p>
+        </footer>
+    </div>
+    <script src="https://s19.cnzz.com/z_stat.php?id=1274441854&web_id=1274441854" language="JavaScript"></script>
+    <script type="text/javascript">
+        $(function () {
+            autoImg();
+            //$(window).scroll(autoImg);
+            //$(window).resize(autoImg);
+        });
+
+        function autoImg() {
+            var liw = $("#picList li").width();
+            $("#picList li").css('width', 20);
+            $("#picList li").css('height', liw);
+        }
+    </script>
+</body>
+
+</html>
+<script type="text/javascript" src="//res.cdn.openinstall.io/openinstall.js"></script>
+<script>
+    var marker, map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: ['119.500102', '35.433340'],
+        zoom: 13
+    });
+    marker = new AMap.Marker({
+        icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+        position: ['119.500102', '35.433340']
+    });
+    marker.setMap(map);
+
+
+    //openinstall下载跳转 
+
+    var data = OpenInstall.parseUrlParams();
+    new OpenInstall({
+        appKey: "w3w1sk",
+        onready: function () {
+            var m = this,
+                button = document.getElementById("downloadButton");
+            button.style.visibility = "visible";
+            m.schemeWakeup();
+            button.onclick = function () {
+                m.wakeupOrInstall();
+                $("#w-alert-popup-white").hide();
+            }
+        }
+    }, data);
+
+    new OpenInstall({
+        appKey: "w3w1sk",
+        onready: function () {
+            var m = this,
+                button = document.getElementById("downloadButton2");
+            button.style.visibility = "visible";
+            m.schemeWakeup();
+            button.onclick = function () {
+                m.wakeupOrInstall();
+                $("#w-alert-popup-white").hide();
+            }
+        }
+    }, data);
+
+
+    function showImg() {
+        $("#dowebok").viewer();
+
+    }
+</script>
